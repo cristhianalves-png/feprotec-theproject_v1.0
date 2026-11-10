@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://kvtmwh7rcni8"]
+
+[ext_resource type="Script" uid="uid://i5d1cdvd07fp" path="res://SCRIPTS/players/software.gd" id="1_18e1k"]
+[ext_resource type="Texture2D" uid="uid://baovmxbtxesbg" path="res://icon.svg" id="2_5qy11"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6r6c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lijt0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxhwq"]
+
+[node name="software" type="CharacterBody2D" unique_id=1883068121]
+script = ExtResource("1_18e1k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1210082467]
+sprite_frames = SubResource("SpriteFrames_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=376732706]
+shape = SubResource("CapsuleShape2D_lijt0")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=2114054043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=996242160]
+shape = SubResource("CircleShape2D_fxhwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203888354]
+texture_filter = 1
+texture = ExtResource("2_5qy11")

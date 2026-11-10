@@ -1,0 +1,22 @@
+hadwe {
+	ligar cabos:
+		cabo de energia
+		cabo de rede
+
+	arma brana:
+		
+}
+sofitiwue{
+	alterar estados:
+		portas
+		armadilhas
+		sistemas de segurança
+
+	portal:
+		67
+}
+
+imbigos{
+	adware: serve de escudo para outros virus
+	rootkit: abre porta pra outros virus entrarem
+}

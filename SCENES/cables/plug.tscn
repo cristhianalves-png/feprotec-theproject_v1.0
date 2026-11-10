@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7hke0qrfhmqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2sjb"]
+
+[node name="plug" type="Area2D" unique_id=1596232538 groups=["PLUG"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693262594]
+shape = SubResource("RectangleShape2D_c2sjb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1246640763]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

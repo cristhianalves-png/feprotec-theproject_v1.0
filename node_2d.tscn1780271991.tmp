@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c0loj28jue1i"]
+
+[ext_resource type="PackedScene" uid="uid://dqovrak8kal3j" path="res://SCENES/players/hardware.tscn" id="1_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2sjb"]
+size = Vector2(686, 15)
+
+[node name="Node2D" type="Node2D" unique_id=799728406]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1277898133]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1653821834]
+position = Vector2(333, 631.5)
+shape = SubResource("RectangleShape2D_c2sjb")
+
+[node name="Hardware" parent="." unique_id=280658006 instance=ExtResource("1_wtcfe")]
+position = Vector2(143, 561)

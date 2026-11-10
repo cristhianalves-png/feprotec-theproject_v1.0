@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dqovrak8kal3j"]
+
+[ext_resource type="Texture2D" uid="uid://baovmxbtxesbg" path="res://icon.svg" id="2_x7wms"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_au0fi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x7wms")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2sjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fw8i"]
+size = Vector2(42, 16)
+
+[node name="Hardware" type="CharacterBody2D" unique_id=280658006 groups=["PLAYER"]]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=889630793]
+scale = Vector2(0.15625, 0.15625)
+sprite_frames = SubResource("SpriteFrames_au0fi")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1055658900]
+shape = SubResource("RectangleShape2D_c2sjb")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1222557230]
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="InteractionArea" unique_id=480731306]
+shape = SubResource("RectangleShape2D_8fw8i")
+
+[node name="PickupMarker" type="Marker2D" parent="." unique_id=962939449]
+position = Vector2(0, -20)
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_exited"]

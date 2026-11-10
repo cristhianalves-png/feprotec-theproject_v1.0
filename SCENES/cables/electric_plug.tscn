@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dw34fdf7oxou5"]
+
+[ext_resource type="Script" uid="uid://bjigr1ymy1r8t" path="res://SCRIPTS/cables/electric_plug.gd" id="1_bpkhm"]
+[ext_resource type="Texture2D" uid="uid://baovmxbtxesbg" path="res://icon.svg" id="2_fskfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2sjb"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au0fi"]
+size = Vector2(12, 12)
+
+[node name="ElectricCable" type="RigidBody2D" unique_id=168234157]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_bpkhm")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1998936186]
+shape = SubResource("RectangleShape2D_c2sjb")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=415000965]
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("2_fskfo")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=964564320]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Collision" type="CollisionShape2D" parent="PickupArea" unique_id=656441203]
+shape = SubResource("RectangleShape2D_au0fi")
+
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_entered"]
+[connection signal="area_exited" from="PickupArea" to="." method="_on_pickup_area_exited"]
